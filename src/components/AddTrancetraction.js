@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 export const AddTrancetraction = () => {
   const [text, setText] = useState("");
   const [amount, setAmont] = useState(0);
+
+  const { addTranstraction } = useContext(GlobalContext);
+
+  const onsubmit = (e) => {
+    e.preventDefault();
+    const newTransaction = {
+      id: Math.floor(Math.random() * 100000000),
+      text,
+      amount: +amount,
+    };
+    addTranstraction(newTransaction);
+  };
   return (
     <div>
       <h3>Add New Transtraction</h3>
-      <form>
+      <form onSubmit={onsubmit}>
         <div className="form-control">
           <label htmlFor="text">Text</label>
           <input

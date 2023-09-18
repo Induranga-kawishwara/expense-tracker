@@ -2,21 +2,21 @@ import './App.css';
 import {Header} from './components/Header';
 import { Balance } from './components/Balance';
 import {Income} from './components/Income';
-import {Transtraction} from './components/Transtraction';
+import { Transtractions } from './components/Transtractions';
 import { AddTrancetraction } from './components/AddTrancetraction';
-import{GlobaleProvider}from './context/GlobalState';
+import{GlobalProvider}from './context/GlobalState';
 
 function App() {
   return (
-    <GlobaleProvider >
+    <GlobalProvider >
       <Header />
       <div className="container">
         <Balance/>
         <Income/>
-        <Transtraction/>
+        <Transtractions/>
         <AddTrancetraction/>
       </div>
-    </GlobaleProvider>
+    </GlobalProvider>
   );
 }
 
